@@ -28,10 +28,37 @@
 
 body {
     font-family: 'Inter', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
-    background: linear-gradient(135deg, var(--background) 0%, #1a1f3a 100%);
+    background: radial-gradient(circle, rgba(236, 228, 227, 1) 0%, rgba(81, 185, 205, 1) 70%);
     color: var(--text-primary);
     line-height: 1.6;
     min-height: 100vh;
+}
+
+.camping-croatia {
+    background: radial-gradient(circle, rgba(236, 228, 227, 1) 0%, rgba(242, 176, 137, 1) 70%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    padding: 15px 30px;
+    border-radius: 50px;
+    display: inline-block;
+    border: 2px solid rgba(80, 90, 65, 0.3);
+    font-size: 5.5rem;
+}
+
+.recolor-croatia {
+    background: radial-gradient(circle, rgba(236, 228, 227, 1) 0%, rgba(81, 185, 205, 1) 70%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    padding: 15px 30px;
+    border-radius: 50px;
+    display: inline-block;
+    border: 3px solid rgba(80, 90, 65, 0.3);
+    font-size: 5.5rem;
+    color: white;
 }
 
 /* Navigation styles */
@@ -47,6 +74,13 @@ nav {
     width: 100%;
     left: 0;
     right: 0;
+    margin: 0;
+}
+
+/* Remove default margin from main */
+main {
+    margin: 0;
+    padding: 0;
 }
 
 nav .nav-wrapper {
@@ -89,7 +123,15 @@ nav ul a:hover {
     margin-right: 24px;
 }
 
-/* Active link style */
+nav .brand-logo {
+    color: var(--ivory);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+nav .brand-logo:hover {
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
 nav ul a.active {
     background: rgba(242, 176, 137, 0.4);
     color: var(--ivory);
@@ -166,6 +208,7 @@ p {
 input[type="text"], 
 input[type="email"], 
 input[type="password"],
+input[type="number"],
 textarea {
     background: var(--surface) !important;
     border: 1px solid var(--border-color) !important;
@@ -179,6 +222,7 @@ textarea {
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="password"]:focus,
+input[type="number"]:focus,
 textarea:focus {
     border-color: var(--primary-color) !important;
     box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1) !important;
@@ -187,11 +231,72 @@ textarea:focus {
 input[type="text"]::placeholder,
 input[type="email"]::placeholder,
 input[type="password"]::placeholder,
+input[type="number"]::placeholder,
 textarea::placeholder {
     color: var(--text-secondary) !important;
 }
 
-/* Footer */
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10000;
+    background-color: rgba(80, 90, 65, 0.3);
+    overflow-y: auto;
+}
+
+.modal-content {
+    background-color: var(--turquoise);
+    margin: 10% auto;
+    padding: 40px;
+    width: 80%;
+    max-width: 800px;
+    border-radius: 12px;
+    box-shadow: 0 24px 38px rgba(0, 0, 0, 0.3);
+    color: var(--text-primary);
+}
+
+.modal-content h4 {
+    color: var(--text-primary);
+    margin-bottom: 20px;
+}
+
+.modal-content p {
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+.modal-images {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    overflow-x: auto;
+}
+
+.modal-images img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.modal-footer {
+    background-color: var(--surface);
+    padding: 20px;
+    text-align: right;
+    border-radius: 0 0 12px 12px;
+}
+
+.modal-close {
+    background-color: var(--peach) !important;
+    color: var(--olive-green) !important;
+    border: 2px solid var(--turquoise);
+}
 footer {
     background: var(--surface) !important;
     border-top: 1px solid var(--border-color);
@@ -230,7 +335,69 @@ footer {
 }
 
 main {
-    background-color: var(--turquoise);
+    background-color: var(--ivory);
     width: 100%;
-    padding: 2rem 0;
+    padding: 0;
+}
+
+/* Camp card specific styles */
+.camp-card {
+    border-left: 4px solid var(--turquoise);
+    overflow: hidden;
+    height: 450px;
+    background-color: var(--ivory);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.camp-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+}
+
+.camp-card .card-image img {
+    height: 200px;
+    object-fit: cover;
+}
+
+.camp-card .card-title {
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    background: linear-gradient(135deg, var(--olive-green), var(--turquoise));
+    padding: 8px 12px;
+    border-radius: 8px;
+    margin: 10px;
+}
+
+.camp-card .card-content {
+    height: 250px;
+    overflow-y: auto;
+}
+
+.status-active {
+    color: var(--turquoise);
+    font-weight: bold;
+}
+
+.status-inactive {
+    color: var(--peach);
+    font-weight: bold;
+}
+
+/* Force 2-column layout for camps */
+#camps-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#camps-container .col {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+@media only screen and (max-width: 600px) {
+    #camps-container .col {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
 }

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camping Croatia</title>
+    
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    
+    <!-- Your custom CSS -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+<body>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo" style="color: var(--ivory);"><i class="material-icons left" style="margin-right: 10px;">wb_sunny</i>Camping Croatia</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons" style="color: var(--ivory);">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="#home"><i class="material-icons left">home</i>Home</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <ul class="sidenav" id="mobile-demo">
+        <li><a href="#home"><i class="material-icons left">home</i>Home</a></li>
+    </ul>
+
+    <main id="home">
+        <!-- Full Width Hero Section -->
+        <div style="width: 100%; height: 400px; overflow: hidden; position: relative;">
+            <img src="https://picsum.photos/seed/seaside-hero/1920/400.jpg" alt="Seaside Camping Hero" style="width: 100%; height: 100%; object-fit: cover;">
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(80, 90, 65, 0.3), rgba(81, 185, 205, 0.3)); display: flex; align-items: center; justify-content: center;">
+                <h1 class="recolor-croatia">Camping Croatia</h1>
+            </div>
+        </div>
+
+        <div class="container" style="background-color: var(--ivory); padding: 60px 20px;">
+            <h4 class="center-align" style="color: var(--olive-green); font-weight: bold;">All Camps</h4>
+            
+            <div id="camps-container" class="row" style="margin-top: 40px;">
+                <!-- Camps will be dynamically loaded here -->
+            </div>
+            
+            <div id="no-camps" class="center-align" style="padding: 60px 20px; display: none;">
+                <i class="material-icons large" style="color: var(--turquoise); font-size: 64px;">beach_access</i>
+                <h5 style="color: var(--olive-green); margin: 20px 0;">No seaside camps found</h5>
+                <p style="color: var(--olive-green); opacity: 0.8;">Check back soon for new coastal camping destinations</p>
+            </div>
+        </div>
+    </main>
+
+    <section>
+        <div class="container" style="background-color: var(--ivory); padding: 40px 20px; margin-top: 20px;">
+            <h4 class="center-align" style="color: var(--olive-green); margin-bottom: 30px;">Camp Amenities</h4>
+            <div class="row">
+                <div class="col s12 m6 l4">
+                    <div class="card" style="border-left: 4px solid var(--turquoise); background-color: var(--olive-green);">
+                        <div class="card-content">
+                            <h5 style="color: var(--ivory);">
+                                <i class="material-icons" style="color: var(--peach); vertical-align: middle;">pool</i>
+                                Swimming Pool
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m6 l4">
+                    <div class="card" style="border-left: 4px solid var(--turquoise); background-color: var(--olive-green);">
+                        <div class="card-content">
+                            <h5 style="color: var(--ivory);">
+                                <i class="material-icons" style="color: var(--peach); vertical-align: middle;">kitchen</i>
+                                Kitchen Facilities
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m6 l4">
+                    <div class="card" style="border-left: 4px solid var(--turquoise); background-color: var(--olive-green);">
+                        <div class="card-content">
+                            <h5 style="color: var(--ivory);">
+                                <i class="material-icons" style="color: var(--peach); vertical-align: middle;">wifi</i>
+                                WiFi Access
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container" style="background-color: var(--olive-green); color: var(--ivory); padding: 40px 20px; text-align: center;">
+            <h4>Location</h4>
+            <p>Beautiful seaside camping locations along the Croatian coast</p>
+            <div class="row" style="margin-top: 30px;">
+                <div class="col s12 m6">
+                    <h5>Address</h5>
+                    <p>Coastal Highway 123<br>Croatia</p>
+                </div>
+                <div class="col s12 m6">
+                    <h5>Contact</h5>
+                    <p>📧 info@camping-croatia.com<br>📞 +385 123 456 789</p>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 30px;">
+                <div class="col s12">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d46053.3380784555!2d15.527536455708123!3d43.82817981900675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1334ce2af7d45097%3A0x6f8fbd351a50c30!2sMurter!5e0!3m2!1shr!2shr!4v1767127182476!5m2!1shr!2shr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 20px;">
+                <div class="col s12">
+                    <p style="color: var(--ivory); opacity: 0.7; font-size: 0.9rem;">Website created by Johnny © 2025</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript at the end of the document so the pages load faster -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
