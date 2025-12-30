@@ -1,0 +1,107 @@
+{% extends 'Base.html' %}
+
+{% block main %}
+<!-- Full Width Hero Section -->
+<div style="width: 80%; height: 400px; overflow: hidden; position: relative; margin: 0 auto;">
+    <img src="https://picsum.photos/seed/seaside-hero/1920/400.jpg" alt="Seaside Camping Hero" style="width: 100%; height: 100%; object-fit: cover;">
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(80, 90, 65, 0.3), rgba(81, 185, 205, 0.3)); display: flex; align-items: center; justify-content: center;">
+        <h1 style="color: transparent; text-align: center; font-size: 5rem; text-shadow: 3px 3px 12px rgba(0,0,0,0.8), -2px -2px 0 rgba(255,255,255,0.8), 2px -2px 0 rgba(255,255,255,0.8), -2px 2px 0 rgba(255,255,255,0.8), 2px 2px 0 rgba(255,255,255,0.8);">Camping Croatia</h1>
+    </div>
+</div>
+
+<div class="container" style="background-color: var(--ivory); padding: 60px 20px;">
+    <h4 class="center-align" style="color: var(--olive-green); font-weight: bold;">All Camps</h4>
+    
+    {% if camps %}
+        <div class="row" style="margin-top: 40px;">
+            {% for camp in camps %}
+                <div class="col s12 m8 l6" style="margin-bottom: 40px;">
+                    <div class="card" style="border-left: 4px solid var(--turquoise); overflow: hidden; height: 450px; background-color: var(--ivory);">
+                        <div class="card-image">
+                            <img src="https://picsum.photos/seed/camp{{ forloop.counter }}/400/200.jpg" alt="{{ camp.name }} seaside camping" style="height: 200px; object-fit: cover;">
+                            <span class="card-title" style="color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); background: linear-gradient(135deg, var(--olive-green), var(--turquoise)); padding: 8px 12px; border-radius: 8px; margin: 10px;">{{ camp.name }}</span>
+                        </div>
+                        <div class="card-content" style="height: 250px; overflow-y: auto;">
+                            <p>{{ camp.description }}</p>
+                            <p>Capacity: {{ camp.people_max_capacity }} people</p>
+                            <p>Seaside Location</p>
+                            <p>
+                                Status: 
+                                {% if camp.active %}
+                                    <span style="color: var(--turquoise); font-weight: bold;">🏖️ Active</span>
+                                {% else %}
+                                    <span style="color: var(--peach); font-weight: bold;">⛵ Inactive</span>
+                                {% endif %}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="center-align" style="padding: 60px 20px;">
+            <i class="material-icons large" style="color: var(--turquoise); font-size: 64px;">beach_access</i>
+            <h5 style="color: var(--olive-green); margin: 20px 0;">No seaside camps found</h5>
+            <p style="color: var(--olive-green); opacity: 0.8;">Start by adding your first coastal camping destination</p>
+            <a href="{% url 'camps-create' %}" class="btn waves-effect waves-light" style="background-color: var(--olive-green); color: var(--ivory); margin-top: 20px;">
+                <i class="material-icons left">add</i>Add First Seaside Camp
+            </a>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}
+
+{% block section %}
+<div class="container" style="background-color: var(--turquoise); padding: 40px 20px; margin-top: 20px;">
+    <h4 class="center-align" style="color: var(--olive-green); margin-bottom: 30px;">Camp Amenities</h4>
+    <div class="row">
+        <div class="col s12 m6 l4">
+            <div class="card" style="border-left: 4px solid var(--peach); background-color: var(--ivory);">
+                <div class="card-content">
+                    <h5 style="color: var(--olive-green);">
+                        <i class="material-icons" style="color: var(--turquoise); vertical-align: middle;">pool</i>
+                        Swimming Pool
+                    </h5>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m6 l4">
+            <div class="card" style="border-left: 4px solid var(--peach); background-color: var(--ivory);">
+                <div class="card-content">
+                    <h5 style="color: var(--olive-green);">
+                        <i class="material-icons" style="color: var(--turquoise); vertical-align: middle;">kitchen</i>
+                        Kitchen Facilities
+                    </h5>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m6 l4">
+            <div class="card" style="border-left: 4px solid var(--peach); background-color: var(--ivory);">
+                <div class="card-content">
+                    <h5 style="color: var(--olive-green);">
+                        <i class="material-icons" style="color: var(--turquoise); vertical-align: middle;">wifi</i>
+                        WiFi Access
+                    </h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+<div class="container" style="background-color: var(--olive-green); color: var(--ivory); padding: 40px 20px; text-align: center;">
+    <h4>Location</h4>
+    <p>Beautiful seaside camping locations along the Croatian coast</p>
+    <div class="row" style="margin-top: 30px;">
+        <div class="col s12 m6">
+            <h5>Address</h5>
+            <p>Coastal Highway 123<br>Croatia</p>
+        </div>
+        <div class="col s12 m6">
+            <h5>Contact</h5>
+            <p>📧 info@camping-croatia.com<br>📞 +385 123 456 789</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

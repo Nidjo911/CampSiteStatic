@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}<title>Document</title>{% endblock %}
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Your custom CSS -->
+
+    <link rel="stylesheet" href="{% static 'styles/base.css' %}?v={% now 'U' %}">
+</head>
+
+<body>
+    <nav>
+        {% block nav %}{% endblock %} 
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo" style="color: var(--ivory);">Camping Croatia</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons" style="color: var(--ivory);">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="{% url 'camps-list' %}"><i class="material-icons left">home</i>Home</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <ul class="sidenav" id="mobile-demo">
+        <li><a href="{% url 'camps-list' %}"><i class="material-icons left">home</i>Home</a></li>
+    </ul>
+    <main> {% block main %}{% endblock %} </main>
+
+    <section> {% block section %}{% endblock %} </section>
+    <!-- Footer -->
+    <footer>{% block footer %}{% endblock %} </footer>
+
+    <!-- JavaScript at the end of the document so the pages load faster -->
+
+    <!-- This will print the actual URL -->
+    <p>Static URL test: {% static 'styles/base.css' %}</p>
+
+    <!-- Check in console -->
+    <script>
+        console.log("Static URL: {% static 'styles/style.css' %}");
+    </script>
+
+    {% block scripts %}{% endblock %}
+</body>
+
+</html>
