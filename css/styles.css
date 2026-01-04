@@ -139,7 +139,7 @@ nav ul a.active {
 
 /* Card styles for products */
 .card {
-    background: var(--surface) !important;
+    background: var(--olive-green) !important;
     border: 1px solid var(--border-color);
     border-radius: 12px;
     transition: all 0.3s ease;
@@ -427,16 +427,23 @@ main {
     font-weight: bold;
 }
 
+/* Wave Divider */
+#wave-divider {
+    margin-bottom: -120px;
+}
+
 /* Force 2-column layout for camps with wider cards */
 #camps-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 0;
+    justify-content: flex-start;
+    margin-top: 0;
 }
 
 #camps-container .col {
-    flex: 0 0 calc(48% - 15px);
-    max-width: calc(48% - 15px);
+    flex: 0 0 calc(50% - 15px);
+    max-width: calc(50% - 15px);
 }
 
 /* SVG Pattern Footer */
@@ -446,6 +453,10 @@ main {
     color: var(--ivory);
     padding: 40px 20px;
     text-align: center;
+    background-image: url("pattern_1/footer.svg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .footer-pattern::before {

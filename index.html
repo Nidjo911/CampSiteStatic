@@ -21,10 +21,9 @@
 <body>
     <nav>
         <div class="nav-wrapper">
-            <a href="#" class="brand-logo" style="color: var(--ivory);"><i class="material-icons left" style="margin-right: 10px;">wb_sunny</i></a>
+            <a href="#home" class="brand-logo" style="color: var(--ivory);"><i class="material-icons left" style="margin-right: 10px;">wb_sunny</i></a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons" style="color: var(--ivory);">menu</i></a>
             <ul class="right hide-on-med-and-down">
-                <li><a href="#home"><i class="material-icons left">home</i>Home</a></li>
                 <li><a href="#contact"><i class="material-icons left">contact_mail</i>Contact</a></li>
                 <li><a href="#!" class="dropdown-trigger" data-target="language-dropdown">
                     <i class="material-icons left">language</i>Language
@@ -36,7 +35,6 @@
 
     <!-- Mobile Navigation -->
     <ul class="sidenav" id="mobile-demo">
-        <li><a href="#home"><i class="material-icons left">home</i>Home</a></li>
         <li><a href="#contact"><i class="material-icons left">contact_mail</i>Contact</a></li>
         <li><a href="#!" class="dropdown-trigger" data-target="language-dropdown-mobile">
             <i class="material-icons left">language</i>Language
@@ -68,7 +66,14 @@
             </div>
         </div>
 
-        <div id="outer-camps-container" class="container" style="background-color: var(--ivory); padding: 60px 20px; max-width: 1600px;">
+        <!-- Wave SVG Divider -->
+        <div id="wave-divider">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="#F2B089" fill-opacity="0.5" d="M0,96L30,112C60,128,120,160,180,149.3C240,139,300,85,360,74.7C420,64,480,96,540,106.7C600,117,660,107,720,106.7C780,107,840,117,900,144C960,171,1020,213,1080,213.3C1140,213,1200,171,1260,160C1320,149,1380,171,1410,181.3L1440,192L1440,0L1410,0C1380,0,1320,0,1260,0C1200,0,1140,0,1080,0C1020,0,960,0,900,0C840,0,780,0,720,0C660,0,600,0,540,0C480,0,420,0,360,0C300,0,240,0,180,0C120,0,60,0,30,0L0,0Z"></path>
+            </svg>
+        </div>
+
+        <div id="outer-camps-container" class="container" style="background-color: var(--ivory); padding: 60px 20px; max-width: 1600px; margin-top: 0;">
             <h4 class="center-align" style="color: var(--olive-green); font-weight: bold;">All Camps</h4>
             
             <div id="camps-container" class="row" style="margin-top: 40px;">
@@ -125,8 +130,10 @@
     <footer id="contact">
         <div class="container footer-pattern">
             <div class="footer-content">
-                <h4>Location</h4>
-                <p>Beautiful seaside camping locations along the Croatian coast</p>
+                <div style="background-color: var(--ivory); padding: 15px; border-radius: 8px; display: inline-block;">
+                    <h4 style="color: var(--olive-green); margin: 0 0 10px 0;">Location</h4>
+                    <p style="color: var(--olive-green); margin: 0;">Beautiful seaside camping locations along the Croatian coast</p>
+                </div>
                 <div class="row" style="margin-top: 30px;">
                     <div class="col s12 m6">
                         <h5>Address</h5>
