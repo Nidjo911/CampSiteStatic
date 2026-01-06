@@ -1,6 +1,8 @@
 # Camping Croatia - Static Website
 A beautiful static website showcasing seaside camping destinations along the Croatian coast with modern design and interactive features.
 
+Live preview link: https://camp-site-static.vercel.app/
+
 ## Features
 - **SVG Styling**: Custom SVG wave dividers and decorative patterns 
 - **Interactive Modals**: Detailed camp information with photo galleries in modal windows
